@@ -1,0 +1,291 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{color}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{question}{Question}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\usepackage[textheight=8.80in, textwidth=6.5in]{geometry}
+
+\begin{document}
+
+\section{Introduction}
+
+We begin with the Chebyshev-type sequence
+\[
+p_0(x)=p_1(x)=1,\qquad p_{r+1}(x)=p_r(x)-x p_{r-1}(x)\quad (r\ge 1),
+\]
+and for a partition $\xi=(\xi_1\ge \cdots \ge \xi_\ell)$ we set
+\begin{equation}
+p_\xi(x):=\prod_{i=1}^\ell p_{\xi_i}(x).
+\end{equation}
+As usual, for a power series $f(x)=\sum_{r\ge 0} c_rx^r$ and an integer $j$, we write
+$[x^j]f(x)=c_j$ if $j\ge 0$, and $[x^j]f(x)=0$ otherwise.
+
+The first theorem is the original eventual-positivity statement.
+
+\begin{theorem}\label{thm:main}
+Fix $m\ge 1$, let $\xi$ be a partition with $\xi_i\le m$ for all $i$, and let
+$\mu\in\mathbb Z_{\ge 0}$. Write
+\[
+\mu=\mu_1m+\mu_0,\qquad 0\le \mu_0<m,
+\]
+and set
+\[
+F(x):=F_{\xi,m,\mu}(x)=\frac{p_{m-\mu_0-1}(x)p_\xi(x)}{p_m(x)^{\mu_1+1}}=\sum_{r\ge 0}a_rx^r.
+\]
+If
+\[
+t:=\#\{i: \xi_i=m\},
+\]
+then the following are true:
+\smallskip
+
+\noindent
+(1) If $m=1$, then $F_{\xi,1,\mu}(x)=1$.
+
+\noindent
+(2) Assume that $m\ge 2$.
+  \begin{enumerate}
+  \item[{\rm {(a)}}] If $t\ge \mu_1+1$, then $F_{\xi,m,\mu}(x)$ is a polynomial. In particular,
+  $a_r=0$ for all sufficiently large $r$.
+  \item[{\rm {(b)}}] If $t\le \mu_1$, then $a_r>0$ for all sufficiently large $r$.
+  \end{enumerate}
+\end{theorem}
+
+Use the notation of Theorem~\ref{thm:main}, and assume
+\[
+k:=\mu_1+1-t\ge 0.
+\]
+Let
+\[
+\alpha_0:=m-\mu_0-1,
+\]
+and let
+\[
+\alpha_1,\dots,\alpha_L
+\]
+be the parts of $\xi$ that are strictly smaller than $m$, listed with multiplicity. Thus
+\[
+p_{m-\mu_0-1}(x)\prod_{\xi_i<m}p_{\xi_i}(x)=\prod_{i=0}^L p_{\alpha_i}(x),
+\]
+and
+\[
+F_{\xi,m,\mu}(x)=\frac{\prod_{i=0}^L p_{\alpha_i}(x)}{p_m(x)^k}.
+\]
+For $u\ge 0$, we define
+\[
+B_m(u):=w_{m-1+2u}^{(m)}(0,m-1).
+\]
+
+\begin{theorem}\label{thm:comb}
+With the notation above, for every $r\ge 0$ one has
+\[
+a_r=
+\sum_{\substack{j_0,\dots,j_L\ge 0\\ u_1,\dots,u_k\ge 0\\
+ j_0+\cdots+j_L+u_1+\cdots+u_k=r}}
+(-1)^{j_0+\cdots+j_L}
+\left(\prod_{i=0}^L \binom{\alpha_i-j_i}{j_i}\right)
+\left(\prod_{\nu=1}^k B_m(u_\nu)\right).
+\]
+Here, the second product is interpreted as $1$ when $k=0$.
+Equivalently, $a_r$ is the signed count of tuples
+\[
+(M_0,M_1,\dots,M_L,\gamma_1,\dots,\gamma_k)
+\]
+with the following properties:
+\begin{enumerate}
+\item for each $0\le i\le L$, the object $M_i$ is a matching in the path graph $P_{\alpha_i}$;
+\item for each $1\le \nu\le k$, the object $\gamma_\nu$ is a top-to-bottom strip walk of height $m-1$;
+\item the total weight condition
+\[
+|M_0|+|M_1|+\cdots+|M_L|+e(\gamma_1)+\cdots+e(\gamma_k)=r
+\]
+holds;
+\item the sign of such a tuple is
+\[
+(-1)^{|M_0|+|M_1|+\cdots+|M_L|}.
+\]
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+\label{thm:manifest}
+Assume the notation in Theorem~\ref{thm:comb}, so that
+\[
+F_{\xi,m,\mu}(x)=\frac{\prod_{i=0}^L p_{\alpha_i}(x)}{p_m(x)^k}.
+\]
+Assume that there exist integers
+\[
+(a_\nu,b_\nu)\qquad (1\le \nu\le k)
+\]
+such that
+\[
+0\le a_\nu,b_\nu\le m-1,\qquad a_\nu+b_\nu\le m-1
+\]
+for every $\nu$, and such that
+\[
+\prod_{i=0}^L p_{\alpha_i}(x)=\prod_{\nu=1}^k p_{a_\nu}(x)p_{b_\nu}(x).
+\]
+Because $p_0(x)=p_1(x)=1$, this factorization condition is weaker than specifying the multiset
+$\alpha_0,\alpha_1,\dots,\alpha_L$.
+Then
+\[
+F_{\xi,m,\mu}(x)=\prod_{\nu=1}^k\left(\sum_{u\ge 0} D_m(a_\nu,b_\nu;u)\,x^u\right).
+\]
+In particular, $a_r$ is the number of $k$-tuples
+\[
+(P_1,\dots,P_k)
+\]
+for which each $P_\nu$ belongs to $\mathcal D_m(a_\nu,b_\nu;u_\nu)$ for some $u_\nu\ge 0$ and
+\[
+u_1+\cdots+u_k=r.
+\]
+Hence all coefficients $a_r$ are nonnegative.
+
+\smallskip
+\noindent
+Moreover, this criterion produces the following explicit infinite families of (unsigned) quotient identities. In these three families, the quotient is $F_{\xi,m,\mu}(x)$ with $\mu=|\xi|$.
+\begin{enumerate}
+\item[\textup{(a)}] Let
+\[
+\xi=(1^s,m^t),
+\]
+and write
+\[
+s=qm+\rho,\qquad 0\le \rho<m.
+\]
+Then $a_N$ counts tuples
+\[
+(P_0,P_1,\dots,P_q)
+\]
+with the following properties:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $P_0\in \mathcal D_m(0,m-\rho-1;u_0)$, so $P_0$ is a Dyck path of height at most $m-1$
+      and semilength $\rho+u_0$ whose terminal descent has length $\rho$;
+\item for $1\le \nu\le q$, one has $P_\nu\in \mathcal D_m(0,0;u_\nu)$, so $P_\nu$ is a Dyck
+      path of height at most $m-1$ and semilength $m-1+u_\nu$ whose terminal descent has length
+      $m-1$;
+\item $u_0+u_1+\cdots+u_q=N$.
+\end{enumerate}
+
+\item[\textup{(b)}] Let
+\[
+\xi=(r,1^s,m^t),
+\qquad 1\le r\le m-1.
+\]
+Write
+\[
+r+s=qm+\rho,\qquad 0\le \rho<m.
+\]
+If $q=0$, equivalently if $r+s<m$, then $a_u$ counts Dyck paths in
+$\mathcal D_m(r,m-r-s-1;u)$. Equivalently, $a_u$ is the number of Dyck paths of height at most
+$m-1$ and semilength $r+s+u$ whose first $r$ steps are up-steps and whose last $r+s$ steps are
+down-steps.
+
+If $q\ge 1$, then $a_N$ counts tuples
+\[
+(P_0,P_1,\dots,P_q)
+\]
+with the following properties:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $P_0\in \mathcal D_m(0,m-\rho-1;u_0)$;
+\item $P_1\in \mathcal D_m(r,0;u_1)$, so $P_1$ is a Dyck path of height at most $m-1$ and
+      semilength $m-1+u_1$ whose first $r$ steps are up-steps and whose terminal descent has
+      length $m-1$;
+\item for $2\le \nu\le q$, one has $P_\nu\in \mathcal D_m(0,0;u_\nu)$;
+\item $u_0+u_1+\cdots+u_q=N$.
+\end{enumerate}
+
+\item[\textup{(c)}] More generally, let
+\[
+\xi=(r_1,\dots,r_d,1^s,m^t),
+\qquad 1\le r_i\le m-1,
+\]
+and write
+\[
+r_1+\cdots+r_d+s=qm+\rho,\qquad 0\le \rho<m.
+\]
+If $q\ge d$, then $a_N$ counts tuples
+\[
+(P_0,P_1,\dots,P_q)
+\]
+with the following properties:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $P_0\in \mathcal D_m(0,m-\rho-1;u_0)$;
+\item for $1\le i\le d$, one has $P_i\in \mathcal D_m(r_i,0;u_i)$;
+\item for $d+1\le \nu\le q$, one has $P_\nu\in \mathcal D_m(0,0;u_\nu)$;
+\item $u_0+u_1+\cdots+u_q=N$.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+
+\begin{thebibliography}{99}
+
+\bibitem{Biswal2026}
+R.~Biswal,
+\emph{Graded characters, Demazure multiplicities, and Chebyshev polynomials},
+preprint, 2026.
+
+\bibitem{BiswalChariSchneiderViswanath2016}
+R.~Biswal, V.~Chari, L.~Schneider, and S.~Viswanath,
+\emph{Demazure flags, Chebyshev polynomials, partial and mock theta functions},
+J. Combin. Theory Ser. A \textbf{140} (2016), 38--75.
+
+\bibitem{BiswalKus2021}
+R.~Biswal and D.~Kus,
+\emph{A combinatorial formula for graded multiplicities in excellent filtrations},
+Transform. Groups \textbf{26} (2021), no.~1, 81--114.
+
+\bibitem{ChariSchneiderShereenWand2014}
+V.~Chari, L.~Schneider, P.~Shereen, and J.~Wand,
+\emph{Modules with Demazure flags and character formulae},
+SIGMA Symmetry Integrability Geom. Methods Appl. \textbf{10} (2014), Paper No.~032, 16 pp.
+
+\bibitem{ChariVenkatesh2015}
+V.~Chari and R.~Venkatesh,
+\emph{Demazure modules, fusion products and $Q$-systems},
+Comm. Math. Phys. \textbf{333} (2015), no.~2, 799--830.
+
+\bibitem{FeiginLoktev1999}
+B.~Feigin and S.~Loktev,
+\emph{On generalized Kostka polynomials and the quantum Verlinde rule},
+in \emph{Differential Topology, Infinite-Dimensional Lie Algebras, and Applications},
+Amer. Math. Soc. Transl. Ser.~2, vol.~194, Amer. Math. Soc., Providence, RI, 1999,
+pp.~61--79.
+
+\bibitem{Flajolet1980}
+P.~Flajolet,
+\emph{Combinatorial aspects of continued fractions},
+Discrete Math. \textbf{32} (1980), no.~2, 125--161.
+
+\bibitem{Godsil1993}
+C.~D.~Godsil,
+\emph{Algebraic Combinatorics},
+Chapman \& Hall, New York, 1993.
+
+\bibitem{JakelicMoura2028} D. Jakeli\'{c}, A. Moura, Limits of multiplicities in excellent filtrations and tensor product decompositions for affine Kac--Moody algebras, Algebr. Represent. Theory 21 (2018), 239--258.
+
+
+
+\bibitem{MasonHandscomb2002}
+J.~C.~Mason and D.~C.~Handscomb,
+\emph{Chebyshev Polynomials},
+Chapman \& Hall/CRC, Boca Raton, FL, 2002.
+
+\bibitem{Stanley2015}
+R.~P.~Stanley,
+\emph{Catalan Numbers},
+Cambridge University Press, New York, 2015.
+
+\end{thebibliography}
+
+\end{document}
