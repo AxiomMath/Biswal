@@ -2,7 +2,7 @@
 
 # Chebyshev quotients, Demazure multiplicities, and Dyck-path models
 
-These files accompany the paper [arXiv:xxxx](https://arxiv.org/abs/xxxxx).
+These files accompany the paper [arXiv:2604.25246](https://arxiv.org/abs/2604.25246).
 
 The formal proofs provided in this work were developed and verified using **Lean 4.28.0**. Compatibility with earlier or later versions is not guaranteed due to the evolving nature of the Lean 4 compiler and its core libraries.
 
