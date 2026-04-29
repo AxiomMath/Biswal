@@ -1,6 +1,6 @@
 [![Logo for Axiom Math](logo.svg)](https://axiommath.ai/)
 
-# Almost all primes are partially regular
+# Chebyshev quotients, Demazure multiplicities, and Dyck-path models
 
 These files accompany the paper [arXiv:xxxx](https://arxiv.org/abs/xxxxx).
 
