@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Biswal.theorem2and3.problem",
+  "solution_module": "Biswal.theorem2and3.solution",
+  "theorem_names": [
+    "genFun_eq_reduced",
+    "D_coeff_mk",
+    "polyP_coeff",
+    "thm_comb_cauchy",
+    "thm_comb",
+    "thm_manifest_factorization",
+    "thm_manifest_coeff_formula",
+    "thm_manifest_D_nonneg",
+    "thm_manifest_coeff_nonneg"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

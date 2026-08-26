@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Biswal.theorem1.problem",
+  "solution_module": "Biswal.theorem1.solution",
+  "theorem_names": [
+    "genFun_eq_one_of_m_eq_one",
+    "genFun_is_polynomial",
+    "genFun_coeff_eventually_pos"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
